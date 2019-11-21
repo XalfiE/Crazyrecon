@@ -84,12 +84,12 @@ If you have any problem or new idea, feel free to create an issue, or pull a req
 
 ## Credits
 
-All of the tools being used by LazyRecon are developed by others, so big thanks to them!
+All thanks should really go to Capt-meelo and all the developers of the tools.
 
 
 ## Disclaimer
 
 This tool is written for educational purposes only. You are responsible for your own actions. If you mess something up or break any law while using this tool, it's your fault and your fault only.
 
-To-do list:
+Alfie's To-do list:
 -To add crt.sh, certspotter on Subdomain Enumeration tools
