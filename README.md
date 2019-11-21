@@ -43,12 +43,12 @@ source get-go.sh
 
 Then, modify the `subEnumTools()` function of `install.sh` by placing your **Virustotal**, **Passivetotal**, **SecurityTrails**, **Censys**, **Riddler**, and **Shodan API keys**. This will give better results during the subdomain enumeration.
 ```
-~/go/bin/subfinder --set-config VirustotalAPIKey=<API-KEY-HERE>
-~/go/bin/subfinder --set-config PassivetotalUsername=<API-KEY-HERE>,PassivetotalKey=<API-KEY-HERE>
-~/go/bin/subfinder --set-config SecurityTrailsKey=<API-KEY-HERE>
-~/go/bin/subfinder --set-config RiddlerEmail=<API-KEY-HERE>,RiddlerPassword=<API-KEY-HERE>
-~/go/bin/subfinder --set-config CensysUsername=<API-KEY-HERE>,CensysSecret=<API-KEY-HERE>
-~/go/bin/subfinder --set-config ShodanAPIKey=<API-KEY-HERE>
+~/go_projects/bin/subfinder --set-config VirustotalAPIKey=<API-KEY-HERE>
+~/go_projects/bin/subfinder --set-config PassivetotalUsername=<API-KEY-HERE>,PassivetotalKey=<API-KEY-HERE>
+~/go_projects/bin/subfinder --set-config SecurityTrailsKey=<API-KEY-HERE>
+~/go_projects/bin/subfinder --set-config RiddlerEmail=<API-KEY-HERE>,RiddlerPassword=<API-KEY-HERE>
+~/go_projects/bin/subfinder --set-config CensysUsername=<API-KEY-HERE>,CensysSecret=<API-KEY-HERE>
+~/go_projects/bin/subfinder --set-config ShodanAPIKey=<API-KEY-HERE>
 ```
 Finally, run the following to install the required tools.
 ```
@@ -73,10 +73,7 @@ chmod +x LazyRecon.sh
   - If you feel **masscan** and **nmap** are slow, you can run them in the background by changing the command `portScan` to `portScan > /dev/null 2>&1 &`.
 
 
-
 ## Tested On
-- Ubuntu 18.10 (64-bit)
-- Debian 9.8 (64-bit)
 - Kali 2019.1 (64-bit)
 
 
@@ -93,3 +90,6 @@ All of the tools being used by LazyRecon are developed by others, so big thanks 
 ## Disclaimer
 
 This tool is written for educational purposes only. You are responsible for your own actions. If you mess something up or break any law while using this tool, it's your fault and your fault only.
+
+To-do list:
+-To add crt.sh, certspotter on Subdomain Enumeration tools
