@@ -53,29 +53,29 @@ setupTools(){
 subEnumTools(){
     echo -e "${GREEN}\n--==[ Installing subdomain enum tools ]==--${RESET}"
     installBanner "Amass"
-    if [ -e ~/go/bin/amass ]; then
+    if [ -e ~/go_projects/bin/amass ]; then
         echo -e "${BLUE}[!] Amass already exists...\n${RESET}"
     else 
-        go get -u github.com/OWASP/Amass/...
+        go get -v -u github.com/OWASP/Amass/
     fi
     
     installBanner "subfinder"
-    if [ -e ~/go/bin/subfinder ]; then
+    if [ -e ~/go_projects/bin/subfinder ]; then
         echo -e "${BLUE}[!] Subfinder already exists...\n${RESET}"
     else 
         go get -u github.com/subfinder/subfinder
         echo -e "${RED}[+] Setting up API keys for subfinder...${RESET}"
         # Set your API keys here
-        ~/go/bin/subfinder --set-config VirustotalAPIKey=<API-KEY-HERE>
-        ~/go/bin/subfinder --set-config PassivetotalUsername=<API-KEY-HERE>,PassivetotalKey=<API-KEY-HERE>
-        ~/go/bin/subfinder --set-config SecurityTrailsKey=<API-KEY-HERE>
-        ~/go/bin/subfinder --set-config RiddlerEmail=<API-KEY-HERE>,RiddlerPassword=<API-KEY-HERE>
-        ~/go/bin/subfinder --set-config CensysUsername=<API-KEY-HERE>,CensysSecret=<API-KEY-HERE>
-        ~/go/bin/subfinder --set-config ShodanAPIKey=<API-KEY-HERE>
+	~/go_projects/bin/subfinder --set-config VirustotalAPIKey=3b7dd39ff03ac5bf850513334bb5c778330d8cded40df154839fe25014fc83de
+	~/go_projects/bin/subfinder --set-config PassivetotalUsername=alfie@the-infosec.com,PassivetotalKey=f2db8f50736241623e174ff0ae392f417af2968b62aa813566696f7d47ca9623
+	~/go_projects/bin/subfinder --set-config SecurityTrailsKey=j4whWS1QJBKpoMwhdpwZghecYFyf7nPT
+	~/go_projects/bin/subfinder --set-config RiddlerEmail=inbox2alfie@gmail.com,RiddlerPassword=coldplay.26
+	~/go_projects/bin/subfinder --set-config CensysUsername=b89cfe15-b2e8-4b91-a3c0-00dfd893de58,CensysSecret=rfai2oCivwa2zl2L9TCNcSEvabSeqBl8
+	~/go_projects/bin/subfinder --set-config ShodanAPIKey=645RQk1sjV69SOvZiBtAlWegRNvYEP4Z
     fi
 
     installBanner "subjack"
-    if [ -e ~/go/bin/subjack ]; then
+    if [ -e ~/go_projects/bin/subjack ]; then
         echo -e "${BLUE}[!] Subjack already exists...${RESET}"
     else 
         go get -u github.com/haccer/subjack
@@ -158,7 +158,7 @@ portScanTools(){
 visualReconTools(){
     echo -e "${GREEN}\n--==[ Installing visual recon tools ]==--${RESET}"
     installBanner "aquatone"
-    if [ -e ~/go/bin/aquatone ]; then
+    if [ -e ~/go_projects/bin/aquatone ]; then
         echo -e "${BLUE}[!] Aquatone already exists...\n${RESET}"
     else 
         go get -u github.com/michenriksen/aquatone
