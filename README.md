@@ -34,5 +34,12 @@ CrazRecon utilizes the following tools:
 Alfie's To-do list:
   - To add findomain to subdomain enumeration workflow
   - To add arjun / param miner to content discovery workflow
+  
+
+Contribute
+If you have any problem or new idea, feel free to create an issue, or pull a request.
+
+Credits
+All of the tools being used by CrazyRecon are developed by others, so big thanks to them!
 
 
