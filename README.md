@@ -6,16 +6,19 @@
 
 LazyRecon is a wrapper of various scripts that automates the tedious and redundant process of reconnaissance of a target domain. 
 
-LazyRecon utilizes the following tools:
+CrazRecon utilizes the following tools:
 - Subdomain Enumeration:
   - [Amass](https://github.com/OWASP/Amass)
-  - [Subfinder](https://github.com/subfinder/subfinder)
-- Subdomain Takeover:
+  
+  - Subdomain Takeover:
   - [subjack](https://github.com/haccer/subjack)
+  
 - CORS Configuration:
   - [CORScanner](https://github.com/chenjj/CORScanner) 
+  
 - IP Discovery:
   - [Massdns](https://github.com/blechschmidt/massdns)
+  
 - Port Scanning:
   - [Masscan](https://github.com/robertdavidgraham/masscan)
   - [Nmap](https://nmap.org/)
@@ -29,67 +32,9 @@ LazyRecon utilizes the following tools:
   - [SecLists' raft-large-words.txt](https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/raft-large-words.txt)
 
 
-## Workflow
-![Flow](workflow.png)
 
-
-## Installation
-First, run the following commands to install the latest version of **Go**.
-```
-git clone https://github.com/capt-meelo/LazyRecon.git
-cd LazyRecon
-source get-go.sh
-```
-
-Then, modify the `subEnumTools()` function of `install.sh` by placing your **Virustotal**, **Passivetotal**, **SecurityTrails**, **Censys**, **Riddler**, and **Shodan API keys**. This will give better results during the subdomain enumeration.
-```
-~/go_projects/bin/subfinder --set-config VirustotalAPIKey=<API-KEY-HERE>
-~/go_projects/bin/subfinder --set-config PassivetotalUsername=<API-KEY-HERE>,PassivetotalKey=<API-KEY-HERE>
-~/go_projects/bin/subfinder --set-config SecurityTrailsKey=<API-KEY-HERE>
-~/go_projects/bin/subfinder --set-config RiddlerEmail=<API-KEY-HERE>,RiddlerPassword=<API-KEY-HERE>
-~/go_projects/bin/subfinder --set-config CensysUsername=<API-KEY-HERE>,CensysSecret=<API-KEY-HERE>
-~/go_projects/bin/subfinder --set-config ShodanAPIKey=<API-KEY-HERE>
-```
-Finally, run the following to install the required tools.
-```
-chmod +x install.sh
-./install.sh
-```
-
-
-## How to Use
-```
-cd LazyRecon
-chmod +x LazyRecon.sh
-./LazyRecon.sh <target_domain>
-```
-
-
-## Notes
-- It's suggested to run this tool in a VPS, such as [DigitalOcean](https://www.digitalocean.com/?refcode=f7f86614e1b3), for better speed & accuracy.
-- Running this tool takes time, thus it's recommended to run it under a **screen** or **tmux** session.
-- The tool runs **masscan** with the option `--rate 10000` for more accurate results. Based on experiments, **masscan** misses some open ports when scanning large port ranges. Depending on your environment, you could do the following to have a good balance between speed and accuracy:
-  - Increase the rate, and/or reduce the number of ports. For example, use the options `--top-ports 1000` & `--rate 100000`.
-  - If you feel **masscan** and **nmap** are slow, you can run them in the background by changing the command `portScan` to `portScan > /dev/null 2>&1 &`.
-
-
-## Tested On
-- Kali 2019.1 (64-bit)
-
-
-## Contribute
-
-If you have any problem or new idea, feel free to create an issue, or pull a request.
-
-
-## Credits
-
-All thanks should really go to Capt-meelo and all the developers of the tools.
-
-
-## Disclaimer
-
-This tool is written for educational purposes only. You are responsible for your own actions. If you mess something up or break any law while using this tool, it's your fault and your fault only.
 
 Alfie's To-do list:
--To add crt.sh, certspotter on Subdomain Enumeration tools
+-To add findomain to subdomain enumeration workflow
+- To add arjun / param miner to content discovery workflow
+
